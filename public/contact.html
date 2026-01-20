@@ -164,118 +164,167 @@
       <div>Human replies</div>
     </div>
 
-    <!-- FORM -->
-    <form
-      name="contact"
-      method="POST"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-      action="/contact-success.html"
-      class="mt-14 space-y-6">
+  <!-- FORM -->
+<!-- netlify form -->
+<form
+  name="contact"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  action="/contact-success.html"
+  class="mt-14 space-y-6">
 
-      <input type="hidden" name="form-name" value="contact">
+  <!-- Netlify required -->
+  <input type="hidden" name="form-name" value="contact">
 
-      <!-- Honeypot -->
-      <p class="hidden">
-        <label>Don’t fill this out: <input name="bot-field"></label>
-      </p>
+  <!-- Honeypot -->
+  <p class="hidden">
+    <label>
+      Don’t fill this out:
+      <input name="bot-field">
+    </label>
+  </p>
 
-      <!-- AUDIT QUESTIONS -->
-      <div>
-        <label class="block text-xs text-textMuted mb-2">
-          What best describes you?
-        </label>
-        <select name="client_type" required
-          class="w-full rounded-lg border border-borderSoft dark:border-white/10
-                 bg-transparent px-4 py-3 text-sm
-                 focus:outline-none focus:ring-1 focus:ring-accent">
-          <option value="">Select one</option>
-          <option>Business owner</option>
-          <option>Founder / Startup</option>
-          <option>Consultant / Professional</option>
-          <option>Other</option>
-        </select>
-      </div>
+  <!-- CLIENT TYPE -->
+  <div>
+    <label class="block text-xs text-textMuted mb-2">
+      What best describes you?
+    </label>
+    <select
+      name="client_type"
+      required
+      class="w-full rounded-lg
+             border border-borderSoft dark:border-white/10
+             bg-white/70 dark:bg-darkCard
+             text-textMain dark:text-gray-200
+             px-4 py-3 text-sm
+             focus:outline-none focus:ring-1 focus:ring-accent">
+      <option value="">Select one</option>
+      <option>Business owner</option>
+      <option>Founder / Startup</option>
+      <option>Consultant / Professional</option>
+      <option>Other</option>
+    </select>
+  </div>
 
-      <div>
-        <label class="block text-xs text-textMuted mb-2">
-          Do you already have a website?
-        </label>
-        <select name="has_website" required
-          class="w-full rounded-lg border border-borderSoft dark:border-white/10
-                 bg-transparent px-4 py-3 text-sm
-                 focus:outline-none focus:ring-1 focus:ring-accent">
-          <option value="">Select one</option>
-          <option>Yes, needs improvement</option>
-          <option>No, starting fresh</option>
-        </select>
-      </div>
+  <!-- EXISTING WEBSITE -->
+  <div>
+    <label class="block text-xs text-textMuted mb-2">
+      Do you already have a website?
+    </label>
+    <select
+      name="has_website"
+      required
+      class="w-full rounded-lg
+             border border-borderSoft dark:border-white/10
+             bg-white/70 dark:bg-darkCard
+             text-textMain dark:text-gray-200
+             px-4 py-3 text-sm
+             focus:outline-none focus:ring-1 focus:ring-accent">
+      <option value="">Select one</option>
+      <option>Yes, needs improvement</option>
+      <option>No, starting fresh</option>
+    </select>
+  </div>
 
-      <div>
-        <label class="block text-xs text-textMuted mb-2">
-          What’s your primary goal?
-        </label>
-        <select name="primary_goal" required
-          class="w-full rounded-lg border border-borderSoft dark:border-white/10
-                 bg-transparent px-4 py-3 text-sm
-                 focus:outline-none focus:ring-1 focus:ring-accent">
-          <option value="">Select one</option>
-          <option>More enquiries</option>
-          <option>Better credibility</option>
-          <option>Speed & performance</option>
-          <option>Other</option>
-        </select>
-      </div>
+  <!-- PRIMARY GOAL -->
+  <div>
+    <label class="block text-xs text-textMuted mb-2">
+      What’s your primary goal?
+    </label>
+    <select
+      name="primary_goal"
+      required
+      class="w-full rounded-lg
+             border border-borderSoft dark:border-white/10
+             bg-white/70 dark:bg-darkCard
+             text-textMain dark:text-gray-200
+             px-4 py-3 text-sm
+             focus:outline-none focus:ring-1 focus:ring-accent">
+      <option value="">Select one</option>
+      <option>More enquiries</option>
+      <option>Better credibility</option>
+      <option>Speed & performance</option>
+      <option>Other</option>
+    </select>
+  </div>
 
-      <!-- CONTACT DETAILS -->
-      <input
-        type="text"
-        name="name"
-        placeholder="Your name"
-        required
-        class="w-full rounded-lg border border-borderSoft dark:border-white/10
-               bg-transparent px-4 py-3 text-sm focus:outline-none">
+  <!-- NAME -->
+  <input
+    type="text"
+    name="name"
+    placeholder="Your name"
+    required
+    class="w-full rounded-lg
+           border border-borderSoft dark:border-white/10
+           bg-white/70 dark:bg-darkCard
+           text-textMain dark:text-gray-200
+           placeholder:text-textMuted dark:placeholder:text-gray-500
+           px-4 py-3 text-sm
+           focus:outline-none focus:ring-1 focus:ring-accent">
 
-      <input
-        type="email"
-        name="email"
-        placeholder="Email address"
-        required
-        class="w-full rounded-lg border border-borderSoft dark:border-white/10
-               bg-transparent px-4 py-3 text-sm focus:outline-none">
+  <!-- EMAIL -->
+  <input
+    type="email"
+    name="email"
+    placeholder="Email address"
+    required
+    class="w-full rounded-lg
+           border border-borderSoft dark:border-white/10
+           bg-white/70 dark:bg-darkCard
+           text-textMain dark:text-gray-200
+           placeholder:text-textMuted dark:placeholder:text-gray-500
+           px-4 py-3 text-sm
+           focus:outline-none focus:ring-1 focus:ring-accent">
 
-      <input type="hidden" name="lead_score" id="leadScore" value="0">
+  <!-- LEAD SCORE -->
+  <input type="hidden" name="lead_score" id="leadScore" value="0">
 
-      <input
-        type="text"
-        name="whatsapp"
-        placeholder="WhatsApp number (optional)"
-        class="w-full rounded-lg border border-borderSoft dark:border-white/10
-               bg-transparent px-4 py-3 text-sm focus:outline-none">
+  <!-- WHATSAPP -->
+  <input
+    type="text"
+    name="whatsapp"
+    placeholder="WhatsApp number (optional)"
+    class="w-full rounded-lg
+           border border-borderSoft dark:border-white/10
+           bg-white/70 dark:bg-darkCard
+           text-textMain dark:text-gray-200
+           placeholder:text-textMuted dark:placeholder:text-gray-500
+           px-4 py-3 text-sm
+           focus:outline-none focus:ring-1 focus:ring-accent">
 
-      <textarea
-        name="message"
-        rows="4"
-        placeholder="Anything else we should know? (context, links, timelines)"
-        class="w-full rounded-lg border border-borderSoft dark:border-white/10
-               bg-transparent px-4 py-3 text-sm focus:outline-none"></textarea>
+  <!-- MESSAGE -->
+  <textarea
+    name="message"
+    rows="4"
+    placeholder="Anything else we should know? (context, links, timelines)"
+    class="w-full rounded-lg
+           border border-borderSoft dark:border-white/10
+           bg-white/70 dark:bg-darkCard
+           text-textMain dark:text-gray-200
+           placeholder:text-textMuted dark:placeholder:text-gray-500
+           px-4 py-3 text-sm
+           focus:outline-none focus:ring-1 focus:ring-accent"></textarea>
 
-      <button
-        type="submit"
-        class="w-full rounded-lg px-6 py-3
-               bg-accent text-textMain
-               transition-all duration-300 ease-out
-               hover:-translate-y-[1px] hover:shadow-md
-               hover:bg-accentHover">
-        Submit for review
-      </button>
+  <!-- SUBMIT -->
+  <button
+    type="submit"
+    class="w-full rounded-lg px-6 py-3
+           bg-accent text-textMain
+           transition-all duration-300 ease-out
+           hover:-translate-y-[1px] hover:shadow-md
+           hover:bg-accentHover
+           active:translate-y-0 active:shadow-sm">
+    Submit for review
+  </button>
 
-      <p class="text-xs text-textMuted dark:text-gray-400 text-center mt-4">
-        We review every request personally. No automated replies.<br>
-        Typical response time: within one working day.
-      </p>
+  <p class="text-xs text-textMuted dark:text-gray-400 text-center mt-4">
+    We review every request personally. No automated replies.<br>
+    Typical response time: within one working day.
+  </p>
 
-    </form>
+</form>
+
 
   </div>
 </section>
