@@ -1,4 +1,4 @@
-# NavWeb Co
+<!-- # NavWeb Co
 
 NavWeb Co is a digital agency website built with PHP and Tailwind CSS.
 
@@ -43,4 +43,4 @@ We help businesses get seen and generate leads through modern websites and digit
 
 ## Author
 NavWeb Co  
-https://navweb.co
+https://navweb.co -->
