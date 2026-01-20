@@ -238,6 +238,46 @@ function initActiveNav() {
   });
 }
 
+
+  /* =========================================================
+     NETLIFY FORM SUBMIT + TOAST
+  ========================================================= */
+  const form = document.querySelector("form[name='contact']");
+  const toast = document.getElementById("formToast");
+
+  if (form && toast) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      try {
+        const res = await fetch("/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          body: new URLSearchParams(formData).toString()
+        });
+
+        if (res.ok) {
+          form.reset();
+
+          toast.classList.remove("hidden");
+          toast.classList.add("opacity-100");
+
+          setTimeout(() => {
+            toast.classList.add("hidden");
+          }, 3500);
+        } else {
+          alert("Something went wrong. Please try again.");
+        }
+      } catch {
+        alert("Network error. Please try again.");
+      }
+    });
+  }
+
 /* =========================================================
    WHATSAPP CTA TEXT
 ========================================================= */
@@ -327,3 +367,4 @@ function initSite() {
 }
 
 document.addEventListener("DOMContentLoaded", initSite);
+

@@ -170,12 +170,11 @@
   method="POST"
   data-netlify="true"
   netlify-honeypot="bot-field"
-  action="/contact-success.html"
   class="mt-14 space-y-6">
+
 
   <!-- Required by Netlify -->
   <input type="hidden" name="form-name" value="contact">
-  <a href="/contact-success.html" class="hidden" aria-hidden="true">
   Contact success
 </a>
 
@@ -327,6 +326,17 @@
 
 </form>
 
+<div
+  id="formToast"
+  class="fixed bottom-6 right-6 z-50
+         hidden opacity-0
+         rounded-xl px-5 py-3
+         bg-accent text-textMain
+         shadow-lg
+         transition-opacity duration-300 ease-out"
+>
+  ✅ Message sent successfully
+</div>
 
   </div>
 </section>
