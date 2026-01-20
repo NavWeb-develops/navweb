@@ -213,8 +213,13 @@ function initDesktopNavbar() {
 function initActiveNav() {
   const navLinks = document.querySelectorAll("[data-link]");
   const sections = [...navLinks]
-    .map(l => document.querySelector(l.getAttribute("href")))
-    .filter(Boolean);
+   .map(l => {
+  const href = l.getAttribute("href");
+  if (!href || !href.startsWith("/#")) return null;
+  return document.querySelector(href.replace("/#", "#"));
+})
+.filter(Boolean);
+
 
   window.addEventListener("scroll", () => {
     let current = "";
@@ -227,7 +232,7 @@ function initActiveNav() {
     navLinks.forEach(link => {
       link.classList.toggle(
         "after:w-full",
-        link.getAttribute("href") === `#${current}`
+        link.getAttribute("href") === `/#${current}`
       );
     });
   });
