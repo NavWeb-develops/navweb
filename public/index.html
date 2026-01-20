@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>NavWeb Co — Digital Studio</title>
+  <meta name="description" content="NavWeb Co builds calm, high-trust websites for serious businesses." />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- SEO -->
+  <meta property="og:title" content="NavWeb Co — Digital Studio">
+  <meta property="og:description" content="Calm, high-trust websites for serious businesses.">
+  <meta property="og:type" content="website">
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif']
+          },
+          colors: {
+            pageBg: '#F4F3EE',
+            accent: '#9FB8AE',
+            accentHover: '#8EA79C',
+            textMain: '#2F2F2F',
+            textMuted: '#6B6B6B',
+            borderSoft: '#D6D6D0',
+            darkBg: '#0F0F0F',
+            darkCard: '#1A1A1A'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-pageBg dark:bg-darkCard text-textMain dark:text-gray-300 font-sans antialiased">
+
+<!-- ================= HEADER ================= -->
+<div class="sticky top-0 z-50 hidden md:block">
+  <div class="pt-4 flex justify-center px-6">
+
+    <nav id="navbar"
+      class="relative flex items-center gap-3 rounded-full
+             bg-white/70 dark:bg-darkCard/80
+             backdrop-blur-md
+             px-3 py-1
+             border border-black/10 dark:border-white/5
+             transition-all duration-300">
+
+      <!-- LOGO -->
+      <a href="/public/index.html#home" class="flex items-center pr-4 border-r border-borderSoft dark:border-white/5">
+        <img src="../img/navweb.png" alt="NavWeb Co" width="110" height="28" />
+      </a>
+      <!-- LINKS -->
+      <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+        <a href="/public/index.html#home" data-link class="relative after:absolute after:left-0 after:-bottom-1 after:h-[1.5px] after:w-0 after:bg-accent after:transition-all hover:after:w-full">Home</a>
+        <a href="/public/index.html#services" data-link class="relative after:absolute after:left-0 after:-bottom-1 after:h-[1.5px] after:w-0 after:bg-accent after:transition-all hover:after:w-full">Services</a>
+        <a href="/public/index.html#process" data-link class="relative after:absolute after:left-0 after:-bottom-1 after:h-[1.5px] after:w-0 after:bg-accent after:transition-all hover:after:w-full">Process</a>
+      </div>
+
+      <!-- CTA -->
+      <a href="/public/contact.html"
+         class="hidden md:inline-flex rounded-full px-4 py-1.5 text-sm
+                bg-accent text-textMain transition-all duration-300 ease-out
+                hover:-translate-y-[1px] hover:shadow-md
+                active:translate-y-0 active:shadow-sm
+                hover:bg-accentHover">
+        Book a call
+      </a>
+    </nav>
+  </div>
+</div>
+
+<!-- ================= MOBILE HEADER (HIDDEN INITIALLY) ================= -->
+<header id="mobileHeader"
+  class="fixed top-0 inset-x-0 z-50
+         hidden md:hidden
+         bg-white/80 dark:bg-darkCard/90
+         backdrop-blur-md
+         border-b border-borderSoft dark:border-white/5
+         transition-transform duration-300 ease-out
+         -translate-y-full">
+
+  <div class="flex items-center justify-between px-5 py-3">
+
+    <!-- MENU BUTTON (LEFT) -->
+    <button id="menuBtnMobile"
+      class="rounded-lg p-2 border border-borderSoft dark:border-white/5"
+      aria-label="Open menu">
+      ☰
+    </button>
+
+    <!-- LOGO (RIGHT) -->
+    <a href="/public/index.html#home">
+      <img src="../img/navweb.png" alt="NavWeb Co" class="h-6 w-auto">
+    </a>
+
+  </div>
+</header>
+
+<!-- ================= MOBILE SIDEBAR ================= -->
+<div id="mobileMenu"
+  class="fixed inset-0 z-50
+         bg-white dark:bg-darkCard
+         -translate-x-full
+         transition-transform duration-300 ease-out">
+
+  <div class="flex items-center justify-between p-6
+              border-b border-borderSoft dark:border-white/5">
+
+    <span class="font-medium">Menu</span>
+    <button id="closeMenu" aria-label="Close menu">✕</button>
+
+  </div>
+
+  <nav class="mt-10 flex flex-col gap-6 px-6 text-lg">
+
+    <a href="/public/index.html#home">Home</a>
+    <a href="/public/index.html#services">Services</a>
+    <a href="/public/index.html#process">Process</a>
+
+    <a href="/public/contact.html"
+       class="mt-6 rounded-lg bg-accent px-6 py-3 text-center">
+      Book a call
+    </a>
+
+  </nav>
+</div>
+
+
+
+<!-- ================= MAIN ================= -->
+<main id="home">
+
+<!-- HERO -->
+<section class="pt-28 md:pt-30 pb-16 md:pb-24 text-center"
+         data-reveal-group>
+  <div class="max-w-7xl mx-auto px-6">
+
+    <p id="timeGreeting"
+       data-reveal
+       class="text-sm text-textMuted mb-4
+              opacity-0 translate-y-3 transition-all duration-700 ease-out"></p>
+
+    <h1 data-reveal
+        class="text-[2.6rem] md:text-[4rem] font-semibold leading-[1.15] tracking-[-0.01em]
+               opacity-0 translate-y-3 transition-all duration-700 ease-out">
+      Thoughtful digital experiences
+      <span class="block mt-3 text-accent">for growing businesses</span>
+    </h1>
+
+    <p data-reveal
+       class="mt-8 max-w-[42rem] mx-auto text-textMuted text-lg
+              opacity-0 translate-y-3 transition-all duration-700 ease-out">
+      Calm, performance-first websites built for long-term business growth.
+    </p>
+
+    <div class="mt-12">
+      <a href="/public/contact.html"
+         class="rounded-lg px-8 py-3 bg-accent hover:bg-accentHover 
+         transition-all duration-300 ease-out
+        hover:-translate-y-[1px] hover:shadow-md
+        active:translate-y-0 active:shadow-sm">
+        Have a project in mind? Let’s talk →
+      </a>
+    </div>
+
+        <div class="mt-6 flex justify-center">
+        <span class="inline-flex items-center gap-2
+                    rounded-full
+                    border border-borderSoft dark:border-white/5
+                    bg-white/60 dark:bg-darkCard/80
+                    px-4 py-1.5
+                    text-xs text-textMuted dark:text-gray-400">
+          <span class="h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
+          Available for new projects
+        </span>
+      </div>
+    <p class="mt-10 text-xs text-textMuted">We reply within 1 working day.</p>
+  </div>
+</section>
+
+<div class="max-w-6xl mx-auto border-t border-borderSoft dark:border-white/5"></div>
+
+
+<!-- SERVICES -->
+<section id="services" class="py-20 md:py-24" data-scroll-fade data-reveal-group>
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-[1.9rem] md:text-[2.2rem] font-semibold tracking-[-0.01em]
+     text-center mb-12">Core services</h2>
+    <div class="grid gap-10 md:grid-cols-2">
+
+      <!-- Business Website -->
+      <div data-reveal class="flex gap-4 opacity-0 translate-y-5 transition-all duration-700">
+        <i class="fa-solid fa-building text-accent mt-1"></i>
+        <div>
+          <h3 class="font-semibold">Business Website</h3>
+          <p class="text-sm text-textMuted/90 mt-2">
+             Calm, structured websites designed for clarity, trust,
+              and long-term business growth.
+          </p>
+        </div>
+      </div>
+
+      <!-- SEO Oriented -->
+      <div data-reveal class="flex gap-4 opacity-0 translate-y-5 transition-all duration-700">
+        <i class="fa-solid fa-chart-line text-accent mt-1"></i>
+        <div>
+          <h3 class="font-semibold">SEO Oriented</h3>
+          <p class="text-sm text-textMuted/90 mt-2">
+            Includes structure planning, responsive layout,
+            performance optimisation, and SEO-ready markup.
+          </p>
+        </div>
+      </div>
+
+      <!-- Portfolio / Personal Brand -->
+      <div data-reveal class="flex gap-4 opacity-0 translate-y-5 transition-all duration-700">
+        <i class="fa-solid fa-user-tie text-accent mt-1"></i>
+        <div>
+          <h3 class="font-semibold">Portfolio / Personal Brand</h3>
+          <p class="text-sm text-textMuted/90 mt-2">
+            Clean, personal websites for creators, founders, and professionals.
+          </p>
+        </div>
+      </div>
+
+      <!-- Basic E-commerce -->
+      <div data-reveal class="flex gap-4 opacity-0 translate-y-5 transition-all duration-700">
+        <i class="fa-solid fa-cart-shopping text-accent mt-1"></i>
+        <div>
+          <h3 class="font-semibold">Basic E-commerce</h3>
+          <p class="text-sm text-textMuted/90 mt-2">
+            Simple online stores for small businesses and local brands.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="max-w-6xl mx-auto border-t border-borderSoft dark:border-white/5"></div>
+
+<!-- PROCESS -->
+<section id="process" data-scroll-fade class="py-20 md:py-24 dark:bg-darkCard">
+  <div class="max-w-4xl mx-auto px-6 relative">
+    <h2 class="text-[1.9rem] md:text-[2.2rem] font-semibold tracking-[-0.01em]
+     text-center mb-12">How we work</h2>
+    <div class="mt-16 grid gap-10 md:grid-cols-5 text-center">
+
+  <div>
+    <div class="mx-auto w-12 h-12 rounded-full
+                border border-borderSoft
+                flex items-center justify-center text-accent">
+      <i class="fa-solid fa-comments"></i>
+    </div>
+    <h4 class="mt-4 font-medium text-sm">Discovery</h4>
+    <p class="mt-2 text-xs text-textMuted">
+      Goals, constraints, and success metrics.
+    </p>
+  </div>
+
+  <div>
+    <div class="mx-auto w-12 h-12 rounded-full
+                border border-borderSoft
+                flex items-center justify-center text-accent">
+      <i class="fa-solid fa-sitemap"></i>
+    </div>
+    <h4 class="mt-4 font-medium text-sm">Structure</h4>
+    <p class="mt-2 text-xs text-textMuted">
+      Information flow and page hierarchy.
+    </p>
+  </div>
+
+  <div>
+    <div class="mx-auto w-12 h-12 rounded-full
+                border border-borderSoft
+                flex items-center justify-center text-accent">
+      <i class="fa-solid fa-pen-nib"></i>
+    </div>
+    <h4 class="mt-4 font-medium text-sm">Design</h4>
+    <p class="mt-2 text-xs text-textMuted">
+      Calm visuals with purpose.
+    </p>
+  </div>
+
+  <div>
+    <div class="mx-auto w-12 h-12 rounded-full
+                border border-borderSoft
+                flex items-center justify-center text-accent">
+      <i class="fa-solid fa-code"></i>
+    </div>
+    <h4 class="mt-4 font-medium text-sm">Development</h4>
+    <p class="mt-2 text-xs text-textMuted">
+      Performance-first implementation.
+    </p>
+  </div>
+
+  <div>
+    <div class="mx-auto w-12 h-12 rounded-full
+                border border-borderSoft
+                flex items-center justify-center text-accent">
+      <i class="fa-solid fa-rocket"></i>
+    </div>
+    <h4 class="mt-4 font-medium text-sm">Launch & refine</h4>
+    <p class="mt-2 text-xs text-textMuted">
+      Go live, then improve with real feedback.
+    </p>
+  </div>
+
+</div>
+
+  </div>
+</section>
+
+<div class="max-w-6xl mx-auto border-t border-borderSoft dark:border-white/5"></div>
+
+<!-- PRICING -->
+<section id="pricing" data-scroll-fade class="py-24 md:py-28"
+         data-reveal-group>
+  <div class="max-w-6xl mx-auto px-6">
+
+    <h2 class="text-[1.9rem] md:text-[2.2rem] font-semibold tracking-[-0.01em]
+         text-center mb-4">
+      Project investment
+    </h2>
+
+    <p class="text-center text-xs tracking-wide uppercase text-textMuted mb-10">
+      Fixed scope · Clear timelines · No hidden fees
+    </p>
+
+    <p class="text-center text-sm text-textMuted max-w-[42rem] mx-auto mb-14">
+  We work with clients in India and internationally. Final pricing depends on scope,
+  timelines, and business goals.
+</p>
+
+
+  
+    <div class="grid gap-10 md:grid-cols-2">
+
+      <!-- Business Website -->
+      <div data-reveal
+           class="border border-borderSoft dark:border-white/5
+            rounded-2xl p-6 bg-white/60 dark:bg-darkCard
+            transition-all duration-500 ease-out
+            hover:-translate-y-[2px] hover:shadow-lg">
+        <h3 class="font-semibold text-lg">Business Website</h3>
+        
+        <p class="text-xs uppercase tracking-wide text-textMuted mt-1">
+            Best for established businesses
+        </p>
+
+        <p class="mt-2 text-sm text-textMuted">
+          Professional website focused on clarity, speed, and trust.
+        </p>
+
+  <div class="mt-6 space-y-1 text-sm">
+      <!-- Standard price -->
+<p class="text-xs text-textMuted">
+  Standard pricing:
+  <span class="line-through"
+        data-price
+        data-inr="₹25,000"
+        data-usd="$1,400"
+        data-eur="€1,300">
+    ₹25,000
+  </span>
+</p>
+
+<!-- Current price -->
+<p class="font-medium"
+   data-price
+   data-inr="₹16,000 – ₹20,000"
+   data-usd="$900 – $1,200"
+   data-eur="€850 – €1,100">
+  ₹16,000 – ₹20,000
+</p>
+
+  </div>
+
+      <ul class="mt-6 space-y-2 text-sm text-textMuted">
+        <li>• 5 pages</li>
+        <li>• Responsive & mobile-first</li>
+        <li>• SEO-ready structure</li>
+      </ul>
+  </div>
+
+      <!-- Landing Page -->
+      <div data-reveal
+            class="border border-borderSoft dark:border-white/5
+              rounded-2xl p-6 bg-white/60 dark:bg-darkCard
+              transition-all duration-500 ease-out
+              hover:-translate-y-[2px] hover:shadow-lg">
+      <h3 class="font-semibold text-lg">Landing Page</h3>
+
+      <p class="text-xs uppercase tracking-wide text-textMuted mt-1">
+            Best for campaigns & lead generation
+        </p>
+
+      <p class="mt-2 text-sm text-textMuted">
+        Lead-focused single page designed for conversions.
+      </p>
+
+  <div class="mt-6 space-y-1 text-sm">
+        <p class="text-xs text-textMuted">
+  Standard pricing:
+  <span class="line-through"
+            data-price
+            data-inr="₹12,000"
+            data-usd="$700"
+            data-eur="€650">
+        ₹12,000
+      </span>
+    </p>
+
+    <p class="font-medium"
+      data-price
+      data-inr="₹8,000 – ₹10,000"
+      data-usd="$450 – $600"
+      data-eur="€420 – €560">
+      ₹8,000 – ₹10,000
+    </p>
+  </div>
+      <ul class="mt-6 space-y-2 text-sm text-textMuted">
+        <li>• WhatsApp & form integration</li>
+        <li>• Clear CTA structure</li>
+        <li>• Fast load & mobile-first</li>
+      </ul>
+  </div>
+
+      <!-- E-commerce -->
+      <div data-reveal
+          class="border border-borderSoft dark:border-white/5
+            rounded-2xl p-6 bg-white/60 dark:bg-darkCard
+            transition-all duration-500 ease-out
+            hover:-translate-y-[2px] hover:shadow-lg">
+      <h3 class="font-semibold text-lg">E-commerce Website</h3>
+
+      <p class="text-xs uppercase tracking-wide text-textMuted mt-1">
+        Best for revenue-focused brands
+      </p>
+
+      <p class="mt-2 text-sm text-textMuted">
+        Simple online stores for small businesses and local brands.
+      </p>
+
+  <div class="mt-6 space-y-1 text-sm">
+         <p class="text-xs text-textMuted">
+  Standard pricing:
+  <span class="line-through"
+        data-price
+            data-inr="₹60,000"
+            data-usd="$3,600"
+            data-eur="€3,300">
+        ₹60,000
+      </span>
+    </p>
+
+    <p class="font-medium"
+      data-price
+      data-inr="₹40,000 – ₹55,000"
+      data-usd="$2,400 – $3,200"
+      data-eur="€2,200 – €3,000">
+      ₹40,000 – ₹55,000
+    </p>
+</div>
+        <ul class="mt-6 space-y-2 text-sm text-textMuted">
+          <li>• Product management</li>
+          <li>• Razorpay / COD support</li>
+          <li>• Admin-friendly setup</li>
+        </ul>
+  </div>
+
+
+      <!-- Maintenance -->
+      <div data-reveal
+           class="border border-borderSoft dark:border-white/5
+            rounded-2xl p-6 bg-white/60 dark:bg-darkCard
+            transition-all duration-500 ease-out
+            hover:-translate-y-[2px] hover:shadow-lg">
+        <h3 class="font-semibold text-lg">Maintenance</h3>
+
+          <p class="text-xs uppercase tracking-wide text-textMuted mt-1">
+           Best for long-term partners
+          </p>
+
+        <p class="mt-2 text-sm text-textMuted">
+          Ongoing support to keep your website healthy.
+        </p>
+
+        <div class="mt-6 space-y-1 text-sm">
+          <p class="text-xs text-textMuted">
+            Standard pricing:
+            <span class="line-through"
+                  data-price
+                  data-inr="₹6,000 / month"
+                  data-usd="$120 / month"
+                  data-eur="€110 / month">
+              ₹6,000 / month
+            </span>
+          </p>
+          <p class="font-medium"
+            data-price
+            data-inr="₹3,000 – ₹5,000 / month"
+            data-usd="$60 – $100 / month"
+            data-eur="€55 – €95 / month">
+            ₹3,000 – ₹5,000 / month
+          </p>
+        </div>
+        <ul class="mt-6 space-y-2 text-sm text-textMuted">
+          <li>• Updates & backups</li>
+          <li>• Small changes included</li>
+          <li>• Priority support</li>
+        </ul>
+      </div>
+
+      <!-- Custom Engagement -->
+<div class="md:col-span-2 flex justify-center">
+  <div class="w-full max-w-[32rem]">
+
+    <!-- Custom Engagement Card -->
+    <div data-reveal
+         class="border border-borderSoft dark:border-white/5
+                rounded-2xl p-6
+                bg-white/40 dark:bg-darkCard
+                transition-all duration-500 ease-out
+                hover:-translate-y-[2px] hover:shadow-lg">
+
+    <h3 class="font-semibold text-lg">Custom Engagement</h3>
+
+    <p class="text-xs uppercase tracking-wide text-textMuted mt-1">
+      Best for global & enterprise teams
+    </p>
+
+    <p class="mt-3 text-sm text-textMuted">
+      Strategy-led design and development for complex products,
+      international brands, or long-term engagements.
+    </p>
+
+      <div class="mt-6 text-sm font-medium"
+          data-price
+          data-inr="₹1,00,000+"
+          data-usd="$6,000+"
+          data-eur="€5,500+">
+        ₹1,00,000+
+      </div>
+
+    <p class="mt-4 text-xs text-textMuted">
+      Scope defined collaboratively after discovery.
+    </p>
+    <a href="/public/contact.html"
+       class="inline-flex mt-6 text-sm text-accent hover:underline">
+      Discuss a custom engagement →
+    </a>
+  </div>
+
+    <!-- 👇 FOOTNOTE — PERFECTLY CENTERED TO CARD -->
+    <div class="mt-6 text-center space-y-2">
+      <p class="text-xs text-textMuted dark:text-gray-400 leading-relaxed">
+        Domain and hosting are purchased separately by the client.
+        We can guide you if needed.
+      </p>
+      <p class="text-xs font-medium text-textMuted dark:text-gray-300">
+        A 50% advance is required to begin all projects.
+      </p>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="max-w-6xl mx-auto border-t border-borderSoft dark:border-white/5"></div>
+
+<!-- TEAM -->
+<section class="py-16 md:py-20 dark:bg-darkCard"
+         data-reveal-group>
+
+  <div class="max-w-6xl mx-auto px-6">
+
+    <h2 class="text-[1.9rem] md:text-[2.2rem] font-semibold tracking-[-0.01em]
+        text-center mb-12">
+      Real people behind NavWeb
+    </h2>
+
+    <div class="grid gap-10 md:grid-cols-3 text-center">
+
+      <!-- Mayuresh -->
+<div class="group rounded-2xl border border-borderSoft dark:border-white/5
+            bg-white/60 dark:bg-darkCard p-6
+            transition-all duration-300
+            hover:-translate-y-[2px] hover:shadow-lg">
+
+  <h4 class="font-semibold text-lg">Mayuresh Khamkar</h4>
+  <p class="mt-1 text-sm text-textMuted">Engineering & Architecture</p>
+
+  <p class="mt-4 text-sm text-textMuted leading-relaxed">
+    Leads system architecture, performance optimisation,
+     Focused on scalability,
+    maintainability, and clean foundations.
+  </p>
+
+<div class="mt-4 flex flex-wrap justify-center gap-2
+            text-xs text-textMuted dark:text-gray-400">
+    <span>Performance</span> ·
+    <span>Scalability</span> ·
+    <span>Architecture</span>
+  </div>
+
+  <a href="https://www.linkedin.com/in/mayuresh-khamkar-2a974232a"
+     target="_blank"
+     class="inline-flex mt-5 text-sm text-accent">
+    <i class="fa-brands fa-linkedin mr-2"></i>LinkedIn →
+  </a>
+</div>
+
+<!-- Aniket -->
+<div class="group rounded-2xl border border-borderSoft dark:border-white/5
+            bg-white/60 dark:bg-darkCard p-6
+            transition-all duration-300
+            hover:-translate-y-[2px] hover:shadow-lg">
+
+  <h4 class="font-semibold text-lg">Aniket Thatte</h4>
+  <p class="mt-1 text-sm text-textMuted">UI & Frontend Engineering</p>
+
+  <p class="mt-4 text-sm text-textMuted leading-relaxed">
+    Specialises in frontend architecture, responsive systems,
+    and accessibility. Focused on clarity, usability,
+    and performance-first UI.
+  </p>
+
+<div class="mt-4 flex flex-wrap justify-center gap-2
+            text-xs text-textMuted dark:text-gray-400">
+    <span>UI Systems</span> ·
+    <span>Accessibility</span> ·
+    <span>Frontend</span>
+  </div>
+
+  <a href="https://www.linkedin.com/in/aniket-thatte-a69714252"
+     target="_blank"
+     class="inline-flex mt-5 text-sm text-accent">
+    <i class="fa-brands fa-linkedin mr-2"></i>LinkedIn →
+  </a>
+</div>
+
+<!-- Gaurav -->
+<div class="group rounded-2xl border border-borderSoft dark:border-white/5
+            bg-white/60 dark:bg-darkCard p-6
+            transition-all duration-300
+            hover:-translate-y-[2px] hover:shadow-lg">
+
+  <h4 class="font-semibold text-lg">Gaurav Wadke</h4>
+  <p class="mt-1 text-sm text-textMuted">Strategy & Client Communication</p>
+
+  <p class="mt-4 text-sm text-textMuted leading-relaxed">
+    Handles discovery, scope definition, and client alignment.
+    Ensures clarity, realistic timelines, and smooth delivery.
+  </p>
+
+<div class="mt-4 flex flex-wrap justify-center gap-2
+            text-xs text-textMuted dark:text-gray-400">
+    <span>Strategy</span> ·
+    <span>Planning</span> ·
+    <span>Communication</span>
+  </div>
+
+  <a href="https://www.linkedin.com/in/gaurav-wadke"
+     target="_blank"
+     class="inline-flex mt-5 text-sm text-accent">
+    <i class="fa-brands fa-linkedin mr-2"></i>LinkedIn →
+  </a>
+</div>
+
+
+    </div>
+  </div>
+</section>
+
+<div class="max-w-6xl mx-auto border-t border-borderSoft dark:border-white/5"></div>
+
+<section class="py-20 md:py-24">
+  <div class="max-w-5xl mx-auto px-6 text-center">
+
+    <h2 class="text-2xl font-semibold">
+      What clients appreciate working with NavWeb
+    </h2>
+
+    <p class="mt-4 text-sm text-textMuted max-w-xl mx-auto">
+      Clear boundaries, thoughtful execution, and predictable delivery —
+      without unnecessary complexity.
+    </p>
+
+    <div class="mt-12 grid gap-10 md:grid-cols-3 text-left text-sm">
+
+      <div class="border-l border-borderSoft pl-4">
+        <h4 class="font-medium">Clear scope</h4>
+        <p class="mt-2 text-textMuted">
+          We define what’s included early to avoid surprises later.
+        </p>
+      </div>
+
+      <div class="border-l border-borderSoft pl-4">
+        <h4 class="font-medium">Limited revisions</h4>
+        <p class="mt-2 text-textMuted">
+          Focused feedback leads to better outcomes and faster delivery.
+        </p>
+      </div>
+
+      <div class="border-l border-borderSoft pl-4">
+        <h4 class="font-medium">Long-term thinking</h4>
+        <p class="mt-2 text-textMuted">
+          Built to scale, not patched together for short-term wins.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-borderSoft dark:border-white/5
+               bg-white/60 dark:bg-darkCard">
+
+  <div class="max-w-6xl mx-auto px-6 py-20
+              grid gap-14
+              sm:grid-cols-2
+              md:grid-cols-4 text-sm">
+
+   <!-- BRAND -->
+<div>
+  <h4 class="font-semibold">NavWeb Co</h4>
+
+  <p class="mt-4 text-textMuted dark:text-gray-400 leading-relaxed">
+    Calm, performance-first websites
+    built for long-term trust.
+  </p>
+
+  <!-- SOCIAL ICONS BELOW BRAND -->
+  <div class="mt-5 flex gap-5 text-lg
+              text-textMuted dark:text-gray-400">
+
+    <a href="#"
+       aria-label="LinkedIn"
+       class="transition-all duration-200
+              hover:text-textMain dark:hover:text-white
+              hover:-translate-y-[1px]">
+      <i class="fa-brands fa-linkedin"></i>
+    </a>
+
+    <a href="https://x.com/NavigateW74716"
+       aria-label="X / Twitter"
+       class="transition-all duration-200
+              hover:text-textMain dark:hover:text-white
+              hover:-translate-y-[1px]">
+      <i class="fa-brands fa-twitter"></i>
+    </a>
+
+    <a href="https://www.instagram.com/navweb.co?igsh=dmkyaXN1YXIxNWF5"
+       aria-label="Instagram"
+       class="transition-all duration-200
+              hover:text-textMain dark:hover:text-white
+              hover:-translate-y-[1px]">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="#"
+       aria-label="Facebook"
+       class="transition-all duration-200
+              hover:text-textMain dark:hover:text-white
+              hover:-translate-y-[1px]">
+      <i class="fa-brands fa-facebook-f"></i>
+    </a>
+
+    <a href="#"
+       aria-label="GitHub"
+       class="transition-all duration-200
+              hover:text-textMain dark:hover:text-white
+              hover:-translate-y-[1px]">
+      <i class="fa-brands fa-github"></i>
+    </a>
+
+  </div>
+</div>
+    <!-- PAGES -->
+    <div>
+      <h4 class="font-semibold">Pages</h4>
+      <ul class="mt-4 space-y-2 text-textMuted dark:text-gray-400">
+        <li>
+          <a href="#home"
+             class="transition-opacity hover:opacity-100 opacity-80">
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="#services"
+             class="transition-opacity hover:opacity-100 opacity-80">
+            Services
+          </a>
+        </li>
+        <li>
+          <a href="#process"
+             class="transition-opacity hover:opacity-100 opacity-80">
+            Process
+          </a>
+        </li>
+        <li>
+          <a href="/public/contact.html"
+             class="transition-opacity hover:opacity-100 opacity-80">
+            Contact
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- WORKING STYLE -->
+    <div>
+      <h4 class="font-semibold">Working style</h4>
+      <p class="mt-4 text-textMuted dark:text-gray-400 leading-relaxed">
+        Calm timelines · Thoughtful builds ·
+        Long-term thinking  
+      </p>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM BAR -->
+  <div class="max-w-6xl mx-auto border-t border-borderSoft dark:border-white/5">
+    <p class="py-8 text-center text-xs text-textMuted dark:text-gray-500">
+      © <span id="year"></span> NavWeb Co — All rights reserved
+    </p>
+  </div>
+
+</footer>
+
+<script src="../main.js" defer></script>
+
+<!-- WHATSAPP CTA -->
+<a href="https://wa.me/917058133231"
+   class="fixed bottom-4 right-4 z-50
+          flex items-center gap-2
+          rounded-full bg-accent text-textMain
+          px-4 py-3 text-sm shadow-md
+          hover:bg-accentHover transition-all duration-300 ease-out
+          hover:-translate-y-[1px] hover:shadow-md
+          active:translate-y-0 active:shadow-sm">
+  <i class="fa-brands fa-whatsapp text-green-600"></i>
+  <span class="hidden md:inline">Chat with us</span>
+</a>
+
+</body>
+</html>

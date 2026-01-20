@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>NavWeb Co — Digital Studio</title>
+  <meta name="description" content="NavWeb Co builds calm, high-trust websites for serious businesses." />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- SEO -->
+  <meta property="og:title" content="NavWeb Co — Digital Studio">
+  <meta property="og:description" content="Calm, high-trust websites for serious businesses.">
+  <meta property="og:type" content="website">
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif']
+          },
+          colors: {
+            pageBg: '#F4F3EE',
+            accent: '#9FB8AE',
+            accentHover: '#8EA79C',
+            textMain: '#2F2F2F',
+            textMuted: '#6B6B6B',
+            borderSoft: '#D6D6D0',
+            darkBg: '#0F0F0F',
+            darkCard: '#1A1A1A'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-pageBg dark:bg-darkCard text-textMain dark:text-gray-300 font-sans antialiased">
+
+<!-- ================= HEADER ================= -->
+<div class="sticky top-0 z-50 hidden md:block">
+  <div class="pt-4 flex justify-center px-6">
+
+    <nav id="navbar"
+      class="relative flex items-center gap-3 rounded-full
+             bg-white/70 dark:bg-darkCard/80
+             backdrop-blur-md
+             px-3 py-1
+             border border-black/10 dark:border-white/5
+             transition-all duration-300">
+
+      <!-- LOGO -->
+      <a href="#home" class="flex items-center pr-4 border-r border-borderSoft dark:border-white/5">
+        <img src="../img/navweb.png" alt="NavWeb Co" width="110" height="28" />
+      </a>
+      <!-- LINKS -->
+      <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+        <a href="/public/index.html#home" data-link class="relative after:absolute after:left-0 after:-bottom-1 after:h-[1.5px] after:w-0 after:bg-accent after:transition-all hover:after:w-full">Home</a>
+        <a href="/public/index.html#services" data-link class="relative after:absolute after:left-0 after:-bottom-1 after:h-[1.5px] after:w-0 after:bg-accent after:transition-all hover:after:w-full">Services</a>
+        <a href="/public/index.html#process" data-link class="relative after:absolute after:left-0 after:-bottom-1 after:h-[1.5px] after:w-0 after:bg-accent after:transition-all hover:after:w-full">Process</a>
+      </div>
+
+      <!-- CTA -->
+      <a href="/public/contact.html"
+         class="hidden md:inline-flex rounded-full px-4 py-1.5 text-sm
+                bg-accent text-textMain transition-all duration-300 ease-out
+                hover:-translate-y-[1px] hover:shadow-md
+                active:translate-y-0 active:shadow-sm
+                hover:bg-accentHover">
+        Book a call
+      </a>
+    </nav>
+  </div>
+</div>
+
+<!-- ================= MOBILE HEADER (HIDDEN INITIALLY) ================= -->
+<header id="mobileHeader"
+  class="fixed top-0 inset-x-0 z-50
+         hidden md:hidden
+         bg-white/80 dark:bg-darkCard/90
+         backdrop-blur-md
+         border-b border-borderSoft dark:border-white/5
+         transition-transform duration-300 ease-out
+         -translate-y-full">
+
+  <div class="flex items-center justify-between px-5 py-3">
+
+    <!-- MENU BUTTON (LEFT) -->
+    <button id="menuBtnMobile"
+      class="rounded-lg p-2 border border-borderSoft dark:border-white/5"
+      aria-label="Open menu">
+      ☰
+    </button>
+
+    <!-- LOGO (RIGHT) -->
+    <a href="/public/index.html#home">
+      <img src="../img/navweb.png" alt="NavWeb Co" class="h-6 w-auto">
+    </a>
+
+  </div>
+</header>
+
+<!-- ================= MOBILE SIDEBAR ================= -->
+<div id="mobileMenu"
+  class="fixed inset-0 z-50
+         bg-white dark:bg-darkCard
+         -translate-x-full
+         transition-transform duration-300 ease-out">
+
+  <div class="flex items-center justify-between p-6
+              border-b border-borderSoft dark:border-white/5">
+
+    <span class="font-medium">Menu</span>
+    <button id="closeMenu" aria-label="Close menu">✕</button>
+
+  </div>
+
+  <nav class="mt-10 flex flex-col gap-6 px-6 text-lg">
+
+    <a href="index.html#home">Home</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#process">Process</a>
+
+    <a href="/public/contact.html"
+       class="mt-6 rounded-lg bg-accent px-6 py-3 text-center">
+      Book a call
+    </a>
+
+  </nav>
+</div>
+
+
+<!-- ================= CONTACT ================= -->
+<section class="pt-28 md:pt-32 pb-20 md:pb-24">
+  <div class="max-w-xl mx-auto px-6">
+
+    <h1 class="text-[2.2rem] md:text-[2.6rem]
+               font-semibold leading-tight tracking-[-0.01em]
+               text-center">
+      Request a website review
+    </h1>
+
+    <p class="mt-4 text-textMuted text-center max-w-[42rem] mx-auto">
+      Answer a few quick questions below.
+      This helps us understand your context before we reply.
+    </p>
+
+    <div class="mt-8 grid grid-cols-3 text-center text-xs text-textMuted dark:text-gray-400">
+      <div>Clear scope</div>
+      <div>No pressure</div>
+      <div>Human replies</div>
+    </div>
+
+    <!-- FORM -->
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      action="/public/contact-success.html"
+      class="mt-14 space-y-6">
+
+      <input type="hidden" name="form-name" value="contact">
+
+      <!-- Honeypot -->
+      <p class="hidden">
+        <label>Don’t fill this out: <input name="bot-field"></label>
+      </p>
+
+      <!-- AUDIT QUESTIONS -->
+      <div>
+        <label class="block text-xs text-textMuted mb-2">
+          What best describes you?
+        </label>
+        <select name="client_type" required
+          class="w-full rounded-lg border border-borderSoft dark:border-white/10
+                 bg-transparent px-4 py-3 text-sm
+                 focus:outline-none focus:ring-1 focus:ring-accent">
+          <option value="">Select one</option>
+          <option>Business owner</option>
+          <option>Founder / Startup</option>
+          <option>Consultant / Professional</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-xs text-textMuted mb-2">
+          Do you already have a website?
+        </label>
+        <select name="has_website" required
+          class="w-full rounded-lg border border-borderSoft dark:border-white/10
+                 bg-transparent px-4 py-3 text-sm
+                 focus:outline-none focus:ring-1 focus:ring-accent">
+          <option value="">Select one</option>
+          <option>Yes, needs improvement</option>
+          <option>No, starting fresh</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-xs text-textMuted mb-2">
+          What’s your primary goal?
+        </label>
+        <select name="primary_goal" required
+          class="w-full rounded-lg border border-borderSoft dark:border-white/10
+                 bg-transparent px-4 py-3 text-sm
+                 focus:outline-none focus:ring-1 focus:ring-accent">
+          <option value="">Select one</option>
+          <option>More enquiries</option>
+          <option>Better credibility</option>
+          <option>Speed & performance</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <!-- CONTACT DETAILS -->
+      <input
+        type="text"
+        name="name"
+        placeholder="Your name"
+        required
+        class="w-full rounded-lg border border-borderSoft dark:border-white/10
+               bg-transparent px-4 py-3 text-sm focus:outline-none">
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Email address"
+        required
+        class="w-full rounded-lg border border-borderSoft dark:border-white/10
+               bg-transparent px-4 py-3 text-sm focus:outline-none">
+
+      <input type="hidden" name="lead_score" id="leadScore" value="0">
+
+      <input
+        type="text"
+        name="whatsapp"
+        placeholder="WhatsApp number (optional)"
+        class="w-full rounded-lg border border-borderSoft dark:border-white/10
+               bg-transparent px-4 py-3 text-sm focus:outline-none">
+
+      <textarea
+        name="message"
+        rows="4"
+        placeholder="Anything else we should know? (context, links, timelines)"
+        class="w-full rounded-lg border border-borderSoft dark:border-white/10
+               bg-transparent px-4 py-3 text-sm focus:outline-none"></textarea>
+
+      <button
+        type="submit"
+        class="w-full rounded-lg px-6 py-3
+               bg-accent text-textMain
+               transition-all duration-300 ease-out
+               hover:-translate-y-[1px] hover:shadow-md
+               hover:bg-accentHover">
+        Submit for review
+      </button>
+
+      <p class="text-xs text-textMuted dark:text-gray-400 text-center mt-4">
+        We review every request personally. No automated replies.<br>
+        Typical response time: within one working day.
+      </p>
+
+    </form>
+
+  </div>
+</section>
+
+<script src="../main.js" defer></script>
+</body>
+</html>
